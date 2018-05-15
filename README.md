@@ -1,10 +1,10 @@
-# 使用以太坊创造你自己的加密货币
+# EHLS
 
 ## 数字货币
 我们将要创造一种数字代币。在以太坊的生态系统中,代币可以代表任何可以交换的商品:币,忠诚点数,黄金证书,借据,游戏道具等。而且因为所有的代币都标准化继承一些基本属性, 这也就意味着你的代币可以立即在以太坊钱包和其他客户端(或者其他使用共同标准的智能合约)中共存。
 
 ### 程序代码
-如果你只想复制粘贴代码,可以使用这个:
+
 ```
 pragma solidity ^0.4.2;
 contract tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData); }
@@ -36,10 +36,10 @@ contract MyToken {
         string tokenSymbol
         ) {
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens 给创建者所有的初始代币
-        totalSupply = initialSupply;                        // Update total supply 更新发行总量
-        name = tokenName;                                   // Set the name for display purposes 设置代币的名称
+        totalSupply = 6000000000;                        // Update total supply 更新发行总量
+        name = EHLS;                                   // Set the name for display purposes 设置代币的名称
         symbol = tokenSymbol;                               // Set the symbol for display purposes 设置代币的标识
-        decimals = decimalUnits;                            // Amount of decimals for display purposes 展示的小数点
+        decimals = 8;                            // Amount of decimals for display purposes 展示的小数点
     }
 
     /* Send coins 发送币*/
@@ -619,16 +619,16 @@ contract MyAdvancedToken is owned, token {
 
 ### 部署合约
 滚动到页面下方,你会看到预估的部署花费。你可以左滑设置一个更小的费用,但是如果价格低于市场平均,你的交易可能花费较长时间。点击*DEPLOY*并输入密码。几秒钟以后,你将被重定向到主界面,在**LATEST TRANSACTIONS**部分,你将看到一行写着*creating contract*。等待一些时间,其他节点开始调起你的交易,你可以看到一个缓慢增长的蓝色长方形,代表着有多少其他节点已经看到你的交易并确认了他们。越多的确认出现,也就越加保证了你的代码被部署了。
-![](https://ethereum.org/images/tutorial/created-token.png)
+
 
 点击写着*admin page*的链接,你就进入了世界上最简单的中央银行的管理界面,在这里,你可以对你新建的合约进行各种操作。
 
 在左边的*READ FROM CONTRACT*栏,你可以免费的使用方法读取合约的值。如果你的合约有其他拥有者,这里会显示他的地址。复制地址然后粘贴在*Balance of*文本框,就会显示出该账号的余额。
 
 在右边的*WRITE TO CONTRACT*栏,你可以看到所有可用的方法。执行这些方法需要消耗gas。如果你的合约可以挖矿,你应该有一个方法叫做*Mint Token*,选择这个方法:
-![](https://ethereum.org/images/tutorial/manage-central-dollar.png)
+
 
 选择代币接收地址和数量(如果代币的小数点为2,则增加两个0在数量后面)。在**Execute from**选择一个账号作为owner,将*Send ETHER*置零,最后点击*EXECUTE*。
 
 在经过几次确认以后,接收者账户的余额就更新了。但是接收者的钱包可以不会自动展示出来:为了监听自定义代币,钱包必须手动添加合约地址到监听列表。复制你的合约地址(在管理页面,点击*copy address*),然后发送给你的接收者。如果他们还没有监听合约,他们可以到*CONTRACTS*栏, 点击*WATCH TOKEN*,然后将地址填在那里。合约基本属性会自动展示(用户也可以自定义)。主图标是不能改变的,用户发送接收代币的时候要确认是否选择了正确的代币。
-![](https://ethereum.org/images/tutorial/add-token.png)
+
