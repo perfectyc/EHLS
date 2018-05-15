@@ -110,7 +110,7 @@ contract MyToken {
 }
 ```
 ### 理解合约代码
-![](https://ethereum.org/images/tutorial/deploy-new-contract.png)
+
 我们从最简单的开始,打开钱包app,进入`CONTRACTS`,然后点击`DELPLOY NEW CONTRACT`。在*SOLIDITY CONTRACT SOURCE CODE*文本输入框中,写入以下代码:
 ```
 contract MyToken {
@@ -119,7 +119,7 @@ contract MyToken {
 }
 ```
 一个*mapping*代表一个地址与余额的映射数组。地址是16进制字符串,余额是整形(0 -- 115*quattuorvigintillion*)。如果你不知道*quattuorvigintillion*有多大,你只要知道比你想像中的大多了。*public*关键字, 意味着这个变量可以被区块链上的任何人访问,意味着所有的余额是公开的(为了在客户端展示他们,也必须这样)。
-![](https://ethereum.org/images/tutorial/edit-contract.png)
+
 如果你马上发布你的合约,他会启动但是没有什么用:它本来应该可以查询任何地址的余额,但是因为你没有发行任何一个coin,每一个地址的余额都将返回0. 因此我们将要创建一些代币在初创的时候。添加如下代码到*mapping...*之后,最后一个大括号之前:
 ```
 function MyToken() {
@@ -135,7 +135,7 @@ function MyToken(uint256 initialSupply) {
 }
 ```
 看图片的右边那一列,你会看到一个下拉选择框,写着*Pick a contract*。 选择合约*MyToken*,你将看到一个叫做*CONTRUCTOR PARAMETERS*的分区,这些是你的代币的参数。你可以通过改变这些变量来重用你的代码。
-![](https://ethereum.org/images/tutorial/function-picker.png)
+
 
 现在你有了一个合约,并且拥有了代币。但是因为没有方法去转移代币,所有的代币都只存在同一个账号下。所以我们马上实现一个转移代币的方法。将以下代码写入最后一个大括号前。
 ```
@@ -192,10 +192,9 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 现在,打开以太坊钱包,去*CONTRACTS*栏,点击*DEPLOY NEW CONTRACT*。
 
 现在复制代币源代码并粘贴到*SOLIDITY CONTRACT SOURCE CODE*文本输入框。如果代码编译没有问题,你应该可以在右边看见*SELECT CONTRACT TO DEPLOY*分区。选择合约*MyToken*,在下面,你将看到所有需要自定义的参数,你可以随意指定参数值。但是现在在这个例子里,我们推荐*_supply*值为10,000, 名字随意,*_symbol*为*%*,*_decimal*为2。如图所示:
-![](https://ethereum.org/images/tutorial/Ethereum-Wallet-Screenshot-2015-12-03-at-3.50.36-PM-10.png)
 
 拉到页面的最后,你可以看到系统评估的部署合约需要的花费,你可以自由选择你愿意支付的手续费。**任何没有被花费的*ether*都讲返还给你**,所以你可以不管这个值,直接默认就好。点击*DEPLOY*,输入你的账户密码,等待生成交易。
-![](https://ethereum.org/images/tutorial/Ethereum-Wallet-Screenshot-2015-12-03-at-3.50.36-PM-11.png)
+
 
 确认完发送交易,你会被重定向到*Send funds*栏, 点击名为*Etherbase(你的主账户)*的账户,不到一分钟时间,你应该可以看到你拥有100%你刚刚创建的代币。发送一些代币给你的朋友:选择*send*,选择你要发送哪种资产(ehter 或者你刚刚创建的代币), 将你朋友的代币地址填入*to*文本框,最后点击*send*。
 ![](https://ethereum.org/images/tutorial/Screen-Shot-2015-12-03-at-9.48.15-AM.png)
@@ -203,7 +202,7 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 如果你给你的朋友发送了一些代币,在他们的钱包里看不到任何变化。这是因为钱包只追踪已经知道的代币,你必须手动添加代币地址。现在进入*CONTRACTS*栏,你应该可以看到你最近创建的合约的链接。点击链接,打开一个新界面,因为这是一个非常简单的合约,直接点击*COPY ADDRESS*,复制合约地址。
 
 返回合约界面,选择*WATCH TOKEN*, 钱包会弹出一个界面,直接粘贴合约地址到文本框。名称,标识,和小数点应该自动的填充,但是如果没有你可以填任何值(只会在你的钱包中展示)。一旦你完成,你将自动接收该代币你拥有的余额,你也可以把他发送给其他人。
-![](https://ethereum.org/images/tutorial/Screen-Shot-2015-12-03-at-9.44.42-AM.png)
+
 
 现在你拥有了你自己的加密代币。可以被用于[价值交换](https://en.wikipedia.org/wiki/Local_currency),或者[工作时间追踪](https://en.wikipedia.org/wiki/Time-based_currency)或者其他项目。但是我们能否创造一种货币,其本身就拥有价值。
 
