@@ -197,7 +197,7 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 
 
 确认完发送交易,你会被重定向到*Send funds*栏, 点击名为*Etherbase(你的主账户)*的账户,不到一分钟时间,你应该可以看到你拥有100%你刚刚创建的代币。发送一些代币给你的朋友:选择*send*,选择你要发送哪种资产(ehter 或者你刚刚创建的代币), 将你朋友的代币地址填入*to*文本框,最后点击*send*。
-![](https://ethereum.org/images/tutorial/Screen-Shot-2015-12-03-at-9.48.15-AM.png)
+
 
 如果你给你的朋友发送了一些代币,在他们的钱包里看不到任何变化。这是因为钱包只追踪已经知道的代币,你必须手动添加代币地址。现在进入*CONTRACTS*栏,你应该可以看到你最近创建的合约的链接。点击链接,打开一个新界面,因为这是一个非常简单的合约,直接点击*COPY ADDRESS*,复制合约地址。
 
